@@ -5,14 +5,14 @@ Run the yarn command to install the package.json depedencies
 `yarn`
 
 Then you must create a .env file following the env.example file.
-In the [front]('front/index.html') the wsl url gotta be replaced by ws://localhost:<the port setted to ws on .env> 
+In the [front](front/index.html) the wsl url gotta be replaced by ws://localhost:<the port setted to ws on .env> 
 
 You can run a mongodb docker container using the docker-compose in case of not having mongodb installed
 
 `docker-compose up`
 
 This will only work if you have docker installed
-You can import the data from database to execute tests using the [devices.json]('dbExport/devices.json').
+You can import the data from database to execute tests using the [devices.json](dbExport/devices.json).
 
 The API runs after executing the start command
 
