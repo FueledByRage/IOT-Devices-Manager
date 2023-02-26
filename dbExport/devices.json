@@ -1,0 +1,91 @@
+[{
+  "_id": {
+    "$oid": "63f8fde4a9acb5e0ef8b6d0c"
+  },
+  "name": "UpdatedDevice",
+  "deviceData": [
+    {
+      "name": "Temperature",
+      "unity": "Cº",
+      "data": 43
+    },
+    {
+      "name": "Humidity",
+      "unity": "%",
+      "data": 29
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63f8ff783c6eb458f551d73e"
+  },
+  "name": "Device Test",
+  "deviceData": [
+    {
+      "name": "Temperature",
+      "unity": "Cº",
+      "data": 45
+    },
+    {
+      "name": "Humidity",
+      "unity": "%",
+      "data": 28
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63f8ffeefcb95a61663ffa96"
+  },
+  "name": "Device Test",
+  "deviceData": [
+    {
+      "name": "Temperature",
+      "unity": "Cº",
+      "data": 45
+    },
+    {
+      "name": "Humidity",
+      "unity": "%",
+      "data": 28
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63fb737ec7c0794cfdf29425"
+  },
+  "name": "Refrigerator",
+  "deviceData": [
+    {
+      "name": "Temperature",
+      "unity": "Cº",
+      "data": 10
+    },
+    {
+      "name": "Humidity",
+      "unity": "%",
+      "data": 5
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63fb738ac7c0794cfdf29428"
+  },
+  "name": "Smart Watch",
+  "deviceData": [
+    {
+      "name": "Heart Rate",
+      "unity": "bpm",
+      "data": 60
+    },
+    {
+      "name": "Temperature",
+      "unity": "Cº",
+      "data": 10
+    }
+  ],
+  "__v": 0
+}]

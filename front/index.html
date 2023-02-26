@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <div id="devices"></div>
+    </main>
+    <script type="module" >
+        const actions = {
+            'create' : ( element ) =>{
+                const device = document.createElement('div');
+                device.setAttribute('class', 'device');
+                device.setAttribute('id', element._id);
+                devices.appendChild(device);
+                const name = document.createElement('span');
+                name.setAttribute('class', 'name');
+                name.innerText = element.name;
+                device.appendChild(name);
+                element.deviceData.forEach( dataDevice =>{
+                const dataDeviceElement = document.createElement('div');
+                dataDeviceElement.innerText = `${dataDevice.name} ${dataDevice.data} ${dataDevice.unity}`
+                dataDeviceElement.setAttribute('class', 'deviceElement');
+                dataDeviceElement.setAttribute('id', dataDevice.name);
+                device.appendChild(dataDeviceElement);
+             });
+            },
+            'read': (payload) =>{
+                const devices = document.querySelector('#devices');
+                payload.devices.forEach(element => {
+                    const device = document.createElement('div');
+                    device.setAttribute('class', 'device');
+                    device.setAttribute('id', element._id);
+                    devices.appendChild(device);
+                    const name = document.createElement('span');
+                    name.setAttribute('class', 'name');
+                    name.innerText = element.name;
+                    device.appendChild(name);
+                    element.deviceData.forEach( dataDevice =>{
+                        const dataDeviceElement = document.createElement('div');
+                        dataDeviceElement.innerText = `${dataDevice.name} ${dataDevice.data}${dataDevice.unity}`
+                        dataDeviceElement.setAttribute('class', 'deviceElement');
+                        dataDeviceElement.setAttribute('id', dataDevice.name);
+                        device.appendChild(dataDeviceElement);
+                    });
+            });
+            },
+            'update': ( updated ) =>{
+                const deviceToUpdate = document.getElementById(updated._id);
+                
+                const name = deviceToUpdate.querySelector('.name');
+                
+                if(deviceToUpdate.name) name.innerText = deviceToUpdate.name;
+
+                if(updated.name ) name.innerText = updated.name;
+                if(updated.deviceData.length > 0){
+                    updated.deviceData.forEach( dataDevice =>{
+                        const dataDeviceElement = document.getElementById(dataDevice.name);
+                        dataDeviceElement.innerText = `${dataDevice.name} ${dataDevice.data}${dataDevice.unity}`
+                    });
+                } 
+
+            },
+            'delete' : ( deletedDevice ) =>{
+                const devices = document.querySelector('#devices');
+                const deviceToExclude = document.getElementById(deletedDevice._id);
+                devices.removeChild(deviceToExclude);
+            }
+        }
+        const client = new WebSocket(`ws://localhost:3333`);
+        client.onmessage = (event) =>{
+            const { action, payload } = JSON.parse(event.data);
+            actions[action](payload);
+        };
+    </script>
+</body>
+</html>
