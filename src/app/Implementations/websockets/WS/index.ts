@@ -1,6 +1,7 @@
 import { ClientManagerImplementation } from "./WSImplementation";
 import { WSMessageManagerImplementation } from "./WSMessageManager";
 import { WSStartImplementation } from "./WSStartImplementation";
+import env from "../../../../env";
 
 export const WSImplementation = WSStartImplementation();
 export const wsServer = WSImplementation.startSocketServer(3333);

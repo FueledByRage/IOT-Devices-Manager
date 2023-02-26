@@ -12,6 +12,7 @@
         <div id="devices"></div>
     </main>
     <script type="module" >
+        const wsUrl = 'ws://localhost:3333'
         const actions = {
             'create' : ( element ) =>{
                 const device = document.createElement('div');
@@ -72,7 +73,7 @@
                 devices.removeChild(deviceToExclude);
             }
         }
-        const client = new WebSocket(`ws://localhost:3333`);
+        const client = new WebSocket(wsUrl);
         client.onmessage = (event) =>{
             const { action, payload } = JSON.parse(event.data);
             actions[action](payload);

@@ -1,9 +1,10 @@
 import { connect as mqttConnect } from "mqtt";
 import { deleteDevice } from "../src/cases/device/delete/deleteDevice";
 import { devices } from "./devices";
+import env from "../src/env";
 
 
-const client = mqttConnect('mqtt://test.mosquitto.org');
+const client = mqttConnect(env.MQTT_URL || '');
 
 client.subscribe('DevicesManagement', function (err) {
     if (err) {

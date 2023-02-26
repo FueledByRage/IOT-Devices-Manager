@@ -21,13 +21,12 @@ const { subscribe, onError, onMessage } = MQTTImplementation( connectionMQTT );
 const errorCallback = ( error : any) => console.error(`Error ${error} occurried.`)
 onError(errorCallback);
 onMessage(handleActions);
-subscribe('DevicesManagement');
+subscribe(env.MQTT_TOPIC || '');
 
 wsServer.on('connection', async (socket : WebSocket ) => {
     const adaptedSocket : ISocket = wsSocketAdapter(socket);
     wsClientsManager.addClient(adaptedSocket);
     const devices = await readDevicesService.execute();
-    //const onConnectResponse = JSON.stringify({ devices });
     const response = JSON.stringify({
         action : 'read',
         payload:{
@@ -35,7 +34,6 @@ wsServer.on('connection', async (socket : WebSocket ) => {
         }
     });
     adaptedSocket.send(response);
-    //wsMessageManager.sendMessage(adaptedSocket, response );
 
     adaptedSocket.on('close', () => wsClientsManager.removeClient(adaptedSocket)); 
 });
