@@ -7,12 +7,12 @@
     {
       "name": "Temperature",
       "unity": "Cº",
-      "data": 43
+      "data": 32
     },
     {
       "name": "Humidity",
       "unity": "%",
-      "data": 29
+      "data": 23
     }
   ],
   "__v": 0
@@ -25,12 +25,12 @@
     {
       "name": "Temperature",
       "unity": "Cº",
-      "data": 45
+      "data": 43
     },
     {
       "name": "Humidity",
       "unity": "%",
-      "data": 28
+      "data": 22
     }
   ],
   "__v": 0
@@ -85,6 +85,132 @@
       "name": "Temperature",
       "unity": "Cº",
       "data": 10
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63fbddd13bb739426122a2a6"
+  },
+  "name": "Refrigerator",
+  "deviceData": [
+    {
+      "name": "Temperature",
+      "unity": "Cº",
+      "data": 10
+    },
+    {
+      "name": "Humidity",
+      "unity": "%",
+      "data": 5
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63fbde989f64327c74093b37"
+  },
+  "name": "Refrigerator",
+  "deviceData": [
+    {
+      "name": "Temperature",
+      "unity": "Cº",
+      "data": 10
+    },
+    {
+      "name": "Humidity",
+      "unity": "%",
+      "data": 5
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63fbdf0de570d148a8a06bba"
+  },
+  "name": "Refrigerator",
+  "deviceData": [
+    {
+      "name": "Temperature",
+      "unity": "Cº",
+      "data": 10
+    },
+    {
+      "name": "Humidity",
+      "unity": "%",
+      "data": 5
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63fbe2e6512a65b1b7e2259b"
+  },
+  "name": "Refrigerator",
+  "deviceData": [
+    {
+      "name": "Temperature",
+      "unity": "Cº",
+      "data": 10
+    },
+    {
+      "name": "Humidity",
+      "unity": "%",
+      "data": 5
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63fbe32c6a14171ee25eb1fa"
+  },
+  "name": "Refrigerator",
+  "deviceData": [
+    {
+      "name": "Temperature",
+      "unity": "Cº",
+      "data": 10
+    },
+    {
+      "name": "Humidity",
+      "unity": "%",
+      "data": 5
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63fbe3650e27357a2d5283b8"
+  },
+  "name": "Refrigerator",
+  "deviceData": [
+    {
+      "name": "Temperature",
+      "unity": "Cº",
+      "data": 10
+    },
+    {
+      "name": "Humidity",
+      "unity": "%",
+      "data": 5
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63fbe394b45053c4acd86c87"
+  },
+  "name": "Refrigerator",
+  "deviceData": [
+    {
+      "name": "Temperature",
+      "unity": "Cº",
+      "data": 10
+    },
+    {
+      "name": "Humidity",
+      "unity": "%",
+      "data": 5
     }
   ],
   "__v": 0

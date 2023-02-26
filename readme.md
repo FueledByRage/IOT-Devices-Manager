@@ -5,7 +5,7 @@ Run the yarn command to install the package.json depedencies
 `yarn`
 
 Then you must create a .env file following the env.example file.
-In the [front](front/index.html) the wsl url gotta be replaced by ws://localhost:<the port setted to ws on .env> 
+In the [front](front/index.html) the ws url gotta be replaced by ws://localhost:<the port setted to ws on .env> 
 
 You can run a mongodb docker container using the docker-compose in case of not having mongodb installed
 
@@ -111,6 +111,8 @@ You firstly must run the aplication core with the command start
 
 `yarn run start`
 
+> **_NOTE_** To run the simulator a second time it's better to update the id's of devices that gotta be excluded or import the database json to once again, in order to keep the exclude device simulation working well
+
 Run the simulator to see the comunication between it and the core.
 It's possible to comment a simulation function call to stop the simulation, commenting the excludeDevice() will stop exclusion of devices for example. By default only the updateDevice() is not commented.
 
@@ -131,5 +133,8 @@ This project contains several Jest test scripts that test the functionality of a
 * test-update: This script tests the update functionality of the system by running the test cases located in the ./tests/cases/update.spec.ts file.
 * test-database: This script tests the database functionality of the system by running the test cases located in the ./tests/database directory.
 * test-integration: This script tests the integration functionality of the system by running the test cases located in the ./tests/integration directory.
+* test-mqtt: Tests the mqtt integration, it's located on integration tests directory
+* test-ws: Tests the ws injection running tests on integration tests directory
+* test-core: Simulate a connection and a create case on the core aplication
 
 To run any of the scripts, you can type yarn run <script-name> in the command line. For example, to run the test-create script, you can type npm run test-create. This will execute all the test cases in the create.spec.ts file and provide feedback on the results.

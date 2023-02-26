@@ -12,7 +12,7 @@ afterAll(()=>{
 
 describe('Testing the update device case', ()=>{
     it('Update devices', async ()=>{
-        const payload = { id: '63f8fde4a9acb5e0ef8b6d0c', name: 'UpdatedDevice' }
+        const payload = { id: '', name: 'UpdatedDevice' }
         const response = await updateDeviceService.execute(payload);
         expect(response.isRight()).toBeTruthy();
     });

@@ -10,6 +10,7 @@
     "test-update": "jest ./tests/cases/update.spec.ts",
     "test-database": "jest ./tests/database",
     "test-integration": "jest ./tests/integration",
+    "test-core": "jest ./tests/core/core.spec.ts",
     "test-mqtt": "jest ./tests/integration/mqtt/mqtt.spec.ts",
     "test-ws": "jest ./tests/integration/ws/ws.spec.ts"
   },

@@ -1,4 +1,4 @@
-import WebSocket = require("ws")
+import WebSocket = require("ws");
 import { MessageEvent } from "ws";
 import { ISocket } from "../../../src/adapters/presentation/socketAdapter";
 import { wsSocketAdapter } from "../../../src/adapters/implementations/wsSocketAdapter";
@@ -9,12 +9,11 @@ import { WSMessageManagerImplementation } from "../../../src/app/Implementations
 import env from "../../../src/env";
 import { ConnectMongooseDB } from "../../../src/database/implementations/mongoose";
 import { connect as mqttConnect } from "mqtt";
-import { MQTTImplementation } from "../../../src/app/Implementations/MQTTImplementation";
 
 
 const { connect, closeConnection } = ConnectMongooseDB();
 
-function waitForSocketState(socket : any, state : any) : Promise<void> {
+export function waitForSocketState(socket : any, state : any) : Promise<void> {
     return new Promise(function (resolve) {
       setTimeout(function () {
         if (socket.readyState === state) {
@@ -79,7 +78,6 @@ describe('Testing integration using WS', ()=>{
       await waitForSocketState(client, client.OPEN);
       let responseMensage;
       client.onmessage = (event : MessageEvent) =>{
-        console.log(event.data);
         responseMensage = event.data.toString();
         client.close();
       };

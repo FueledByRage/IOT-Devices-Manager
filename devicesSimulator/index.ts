@@ -1,5 +1,4 @@
 import { connect as mqttConnect } from "mqtt";
-import { deleteDevice } from "../src/cases/device/delete/deleteDevice";
 import { devices } from "./devices";
 import env from "../src/env";
 
@@ -15,15 +14,26 @@ client.subscribe('DevicesManagement', function (err) {
 
 client.on('message', (topic, message)=>{
     console.log(`Message: ${message} from ${topic}`);
-})
+});
 
 
 const main = () =>{
     const getRandomNumber = ( max : number, min : number ) =>{
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
-    const ids : Array<string> = ['63f8fde4a9acb5e0ef8b6d0c', '63f8ff783c6eb458f551d73e', '63f8ffeefcb95a61663ffa96'];
-    const idsToExclude : Array<string> = ['63fb649c7d867df2f52dc25f', '63fb64ad7d867df2f52dc263', '63fb5d2474b81f6574151f62', '63fb659d8f679efec5cd1705', '63fb6da296d58d33c6764557', '63fb6d8b96d58d33c676454f', '63fb738ac7c0794cfdf29428'];
+    const ids : Array<string> = [
+        '63f8fde4a9acb5e0ef8b6d0c', 
+        '63f8ff783c6eb458f551d73e', 
+        '63f8ffeefcb95a61663ffa96',
+        '63fb737ec7c0794cfdf29425',
+        '63fbddd13bb739426122a2a6'    
+    ];
+    const idsToExclude : Array<string> = [
+        '63fbe394b45053c4acd86c87',
+        '63fbe3650e27357a2d5283b8',
+        '63fbe32c6a14171ee25eb1fa',
+        '63fbe2e6512a65b1b7e2259b'
+    ];
     
     const removeIdFromArray = (arr: string[], str: string): void => {
         const index = arr.indexOf(str);

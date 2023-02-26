@@ -12,7 +12,7 @@ afterAll(()=>{
 
 describe('Testing the update device case', ()=>{
     it('Delete device', async ()=>{
-        const id = '63f8dcd1913e45b398ea3941';
+        const id = '';
         const payload = { id };
         const response = await deleteDeviceService.execute(payload);
         expect(response.isRight()).toBeTruthy();
