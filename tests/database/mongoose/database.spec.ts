@@ -10,15 +10,11 @@ const { connect, closeConnection } = ConnectMongooseDB();
 
 beforeAll(()=>{
     connect(`mongodb://${env.DATABASE_HOST}:${env.DATABASE_PORT}/${env.DATABASE_NAME}`);
-    WSImplementation.server.on('connection', socket =>{
-        WSImplementation.clientManager.addClient(socket);
-        socket.on('close', () => WSImplementation.clientManager.removeClient(socket))
-    });
+
 });
 
 afterAll(()=>{
     closeConnection();
-    WSImplementation.close();
 });
 
 describe('Testing database mongoose implementation', ()=>{

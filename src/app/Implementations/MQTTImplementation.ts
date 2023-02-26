@@ -10,7 +10,7 @@ export const MQTTImplementation = ( client : MqttClient ) : IMQTT =>{
                 if(error) return console.error('error');
                 console.log(`Subscribed to topic ${topic}`);
             }
-
+            
             client.subscribe(topic, errorCallback);
         },
         onError( errorCallback : Function ){

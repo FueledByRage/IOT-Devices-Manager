@@ -18,15 +18,17 @@ The API runs after executing the start command
 
 `yarn run start`
 
+> **_NOTE_** start script depends on nodemon. If there's any problem with it changes all nodemon script in the package.json to replacing 'nodemon' for 'ts-node'.
+
 This has no endpoint but provide a MQTT listen and a WS server that are up to receive messages and send it to aplications connected.
 
 # MQTT
 
-The aplication uses the test mqtt broker from mosquitto
+The aplication can the test mqtt broker from mosquitto
 
 `mqtt://test.mosquitto.org`
 
-you can change it to a local broker or any other by defining it on a .env file with the name DEV_MQTT_URL
+or it's possible to set it to a local broker or any other by defining it on a .env file with the name DEV_MQTT_URL
 
 # Overview
 
@@ -35,7 +37,7 @@ The aplication's three parts; Server, Front and Devices Simulator
 ```mermaid
 graph LR;
     A["Devices simulator fa:fa-cubes"]
-    B["API fa:fa-cubes"]
+    B["Core fa:fa-cubes"]
     C[("Database fa:fa-globe")]
     D["Front fa:fa-cubes"]
 
@@ -115,6 +117,8 @@ It's possible to comment a simulation function call to stop the simulation, comm
 `yarn run simulator`
 
 Then you can open the [front](front) in your browser. If the core has connected to the database and it's the imported device data it gonna display the devices by now.
+
+> **_NOTE_** both start scripts depends on nodemon. If there's any problem with it changes all nodemon script in the package.json to replacing 'nodemon' for 'ts-node'.
 
 
 # Tests

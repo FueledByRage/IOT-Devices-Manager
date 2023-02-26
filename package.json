@@ -1,4 +1,5 @@
 {
+
   "scripts": {
     "start": "nodemon ./src/index.ts",
     "simulator": "nodemon ./devicesSimulator/index.ts",
@@ -8,7 +9,9 @@
     "test-delete": "jest ./tests/cases/delete.spec.ts",
     "test-update": "jest ./tests/cases/update.spec.ts",
     "test-database": "jest ./tests/database",
-    "test-integration": "jest ./tests/integration"
+    "test-integration": "jest ./tests/integration",
+    "test-mqtt": "jest ./tests/integration/mqtt/mqtt.spec.ts",
+    "test-ws": "jest ./tests/integration/ws/ws.spec.ts"
   },
   "devDependencies": {
     "nodemon": "^2.0.20",
