@@ -24,7 +24,7 @@ This has no endpoint but provide a MQTT listen and a WS server that are up to re
 
 # MQTT
 
-The aplication can the test mqtt broker from mosquitto
+The aplication can be tested using mqtt broker from mosquitto
 
 `mqtt://test.mosquitto.org`
 
